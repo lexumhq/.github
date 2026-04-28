@@ -1,70 +1,102 @@
-# Ved Language
+# Lexum
 
-Ved is a deterministic control-plane programming language for building reliable,
-long-running orchestration systems.
+**Deterministic control for distributed systems.**
 
-It focuses on describing how complex distributed software environments should
-evolve and stabilize over time rather than implementing application business
-logic.
+Lexum is a control-plane programming language where system behavior is defined as executable law.
 
----
-
-## Motivation
-
-Modern systems consist of many interacting services, workflows, and autonomous
-components. The logic that governs their deployment, coordination, scaling, and
-recovery is often implemented through ad-hoc scripts or controller frameworks.
-
-Ved explores a programming model where:
-
-- desired system behaviour is expressed as stable goals
-- execution is deterministic and replayable
-- persistent state evolution is a first-class concern
-- authority and isolation boundaries are enforced statically
-- orchestration logic becomes analyzable and reproducible
+Instead of scripting operations or declaring configurations, Lexum defines what must be true — and the runtime deterministically enforces it.
 
 ---
 
-## Core Repositories
+# Core Idea
 
-- ved-runtime  
-  Deterministic execution engine responsible for scheduling, persistence, and
-  effect orchestration.
+```
+Code  → tells the system what to do
+.lex  → defines what must be true
+```
 
-- ved-compiler  
-  Language frontend that transforms Ved source programs into executable bundles.
+A ".lex" file is not configuration.
 
-- ved-cli  
-  Command-line tooling for compiling, running, and inspecting Ved systems.
-
----
-
-## Project Status
-
-Ved is in early design and prototyping stages.
-
-Current focus areas include:
-
-- deterministic scheduling model
-- persistent state journal and replay
-- goal-driven convergence semantics
-- authority-aware orchestration structure
-
-Distributed runtime capabilities and advanced tooling are planned for later
-phases after core execution behaviour is validated.
+It is a law governing a domain of your system.
 
 ---
 
-## Contributing
+# Example
 
-Design discussions are ongoing.  
-Contributors interested in distributed systems, orchestration reliability, and
-deterministic execution models are encouraged to participate.
+```
+auth.lex
+network.lex
+storage.lex
+```
 
-Please open issues to discuss ideas before submitting large changes.
+Each file defines:
+
+- state
+- invariants (must never break)
+- goals (must converge)
+- transitions (deterministic correction)
 
 ---
 
-## License
+# Execution Model
+
+Lexum systems are:
+
+- Deterministic — same input → same execution → same result
+- Convergent — systems reconcile toward defined goals
+- Traceable — execution can be replayed exactly
+- Isolated — domains communicate via explicit boundaries
+
+---
+
+# CLI
+
+```
+lex apply auth.lex     # enforce system law
+lex plan auth.lex      # preview required changes
+lex validate auth.lex  # verify invariants
+lex trace auth.lex    # replay execution
+```
+
+## Development tooling:
+
+```
+lex build
+lex test
+lex lint
+lex fmt
+```
+
+---
+
+# Philosophy
+
+Lexum treats infrastructure as law, not configuration.
+
+- No implicit behavior
+- No hidden side effects
+- No nondeterminism
+
+A system defined in ".lex" behaves exactly as written.
+
+---
+
+# Getting Started
+
+Visit the official site:
+
+[LEXUM](https://lexumhq.netlify.app)
+
+---
+
+# Status
+
+Early prototype.
+
+Core runtime, compiler, and deterministic execution model are under active development.
+
+---
+
+# License
 
 Core repositories are released under the Apache License 2.0.
