@@ -1,6 +1,6 @@
 # Security Policy
 
-Ved is an early-stage open source project.  
+Lexum is an highly opinionated orchestration programming language open source project.
 Security considerations are taken seriously as the runtime and tooling evolve.
 
 ## Supported Versions
