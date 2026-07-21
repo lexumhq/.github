@@ -1,4 +1,4 @@
-# Ved Code Review Checklist
+# Lexum Code Review Checklist
 
 This checklist guides maintainers and contributors during pull request review.
 
@@ -10,7 +10,7 @@ Reviewers should use these criteria before approving changes.
 
 ## 1. Architectural Alignment
 
-- [ ] Does the change align with Ved architectural principles?
+- [ ] Does the change align with Lexum architectural principles?
 - [ ] Does it avoid known architectural anti-patterns?
 - [ ] Does it preserve the control-plane focus of the language?
 - [ ] Is the change justified by a clear system-level need?

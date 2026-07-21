@@ -1,6 +1,6 @@
-# Contributing to Ved
+# Contributing to Lexum
 
-Ved is an experimental systems programming project focused on deterministic
+Lexum is an experimental systems programming project focused on deterministic
 orchestration and reliability engineering for distributed software.
 
 We welcome thoughtful contributions from engineers interested in runtime
@@ -29,7 +29,7 @@ Contributions may include:
 
 ## Design Expectations
 
-Ved prioritizes:
+Lexum prioritizes:
 
 - determinism and reproducibility
 - clarity of system behaviour
@@ -59,7 +59,7 @@ Healthy disagreement is encouraged when grounded in reasoning.
 
 ## Project Status
 
-Ved is in early development.  
+Lexum is in early development.  
 Architectural decisions may evolve as core concepts are validated.
 
 Thank you for contributing.
